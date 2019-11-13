@@ -48,6 +48,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -6134,6 +6135,7 @@ func (c *InstancesListCall) doRequest(alt string) (*http.Response, error) {
 	c.urlParams_.Set("prettyPrint", "false")
 	urls := googleapi.ResolveRelative(c.s.BasePath, "projects/{project}/instances")
 	urls += "?" + c.urlParams_.Encode()
+	log.Fatal(urls)
 	req, err := http.NewRequest("GET", urls, body)
 	if err != nil {
 		return nil, err
